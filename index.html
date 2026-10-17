@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-header reveal">
+    <h1 class="page-title">Christian Dale De Chavez - Perspective Pictures</h1>
+  </div>
+
+  <div class="grid">
+
+    <div class="shot reveal">
+      <div class="frame"><img class="frame-img" src="pictures/extreme%20wide%20shot.jpg" alt="Extreme Wide Shot" /></div>
+      <h2 class="shot-title">Extreme Wide Shot</h2>
+    </div>
+
+    <div class="shot reveal">
+      <div class="frame"><img class="frame-img" src="pictures/wide%20shot.jpg" alt="Wide Shot" /></div>
+      <h2 class="shot-title">Wide Shot</h2>
+    </div>
+
+    <div class="shot reveal">
+      <div class="frame"><img class="frame-img" src="pictures/medium%20shot.jpg" alt="Medium Shot" /></div>
+      <h2 class="shot-title">Medium Shot</h2>
+    </div>
+
+    <div class="shot reveal">
+      <div class="frame"><img class="frame-img" src="pictures/medium%20close%20up.jpg" alt="Medium Close Up" /></div>
+      <h2 class="shot-title">Medium Close Up</h2>
+    </div>
+
+    <div class="shot reveal">
+      <div class="frame"><img class="frame-img" src="pictures/close%20up.jpg" alt="Close Up" /></div>
+      <h2 class="shot-title">Close Up</h2>
+    </div>
+
+    <div class="shot reveal">
+      <div class="frame"><img class="frame-img" src="pictures/extreme%20close%20up.jpg" alt="Extreme Close Up" /></div>
+      <h2 class="shot-title">Extreme Close Up</h2>
+    </div>
+
+  </div>
+
+  <script>
+    var items = document.querySelectorAll('.reveal');
+
+    function showItems() {
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      for (var i = 0; i < items.length; i++) {
+        var box = items[i].getBoundingClientRect();
+
+        if (box.top < windowHeight - 60 && box.bottom > 0) {
+          if (items[i].className.indexOf('is-visible') === -1) {
+            items[i].className += ' is-visible';
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', showItems);
+    window.addEventListener('resize', showItems);
+    window.addEventListener('load', showItems);
+
+    showItems();
+  </script>
+
+</body>
+</html>
